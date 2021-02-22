@@ -1,12 +1,14 @@
 const taskInput= document.querySelector('#task');
 const form= document.querySelector('#task-form');
 const taskList= document.querySelector('.collection');
+const clearTask= document.querySelector('.clear-tasks');
 
 loadEventListener();
 
 function loadEventListener() {
 
     form.addEventListener('submit',addTask);
+    clearTask.addEventListener('click',clear);
 
 }
 function addTask(e) {
@@ -31,9 +33,11 @@ function addTask(e) {
 
     taskInput.value='';
 
-
-
-    
-
     e.preventDefault();
+}
+
+function clear (e) {
+
+    taskList.innerHTML='';
+    
 }
